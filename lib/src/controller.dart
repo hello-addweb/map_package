@@ -7,9 +7,7 @@ part of map_plugin;
 final GoogleMapsFlutterPlatform _googleMapsFlutterPlatform =
     GoogleMapsFlutterPlatform.instance;
 
-
 class MapController {
-
   final int mapId;
 
   MapController._(
@@ -19,7 +17,6 @@ class MapController {
   }) : assert(_googleMapsFlutterPlatform != null) {
     _connectStreams(mapId);
   }
-
 
   static Future<MapController> init(
     int id,
@@ -34,8 +31,6 @@ class MapController {
       mapId: id,
     );
   }
-
-
 
   final _MyMapState _googleMapState;
 
@@ -78,13 +73,11 @@ class MapController {
         (MapLongPressEvent e) => _googleMapState.onLongPress(e.position));
   }
 
-
   Future<void> _updateMapOptions(Map<String, dynamic> optionsUpdate) {
     assert(optionsUpdate != null);
     return _googleMapsFlutterPlatform.updateMapOptions(optionsUpdate,
         mapId: mapId);
   }
-
 
   Future<void> _updateMarkers(MarkerUpdates markerUpdates) {
     assert(markerUpdates != null);
@@ -92,13 +85,11 @@ class MapController {
         mapId: mapId);
   }
 
-
   Future<void> _updatePolygons(PolygonUpdates polygonUpdates) {
     assert(polygonUpdates != null);
     return _googleMapsFlutterPlatform.updatePolygons(polygonUpdates,
         mapId: mapId);
   }
-
 
   Future<void> _updatePolylines(PolylineUpdates polylineUpdates) {
     assert(polylineUpdates != null);
@@ -106,28 +97,23 @@ class MapController {
         mapId: mapId);
   }
 
-
   Future<void> _updateCircles(CircleUpdates circleUpdates) {
     assert(circleUpdates != null);
     return _googleMapsFlutterPlatform.updateCircles(circleUpdates,
         mapId: mapId);
   }
 
-
   Future<void> animateCamera(CameraUpdate cameraUpdate) {
     return _googleMapsFlutterPlatform.animateCamera(cameraUpdate, mapId: mapId);
   }
-
 
   Future<void> moveCamera(CameraUpdate cameraUpdate) {
     return _googleMapsFlutterPlatform.moveCamera(cameraUpdate, mapId: mapId);
   }
 
-
   Future<void> setMapStyle(String mapStyle) {
     return _googleMapsFlutterPlatform.setMapStyle(mapStyle, mapId: mapId);
   }
-
 
   Future<LatLngBounds> getVisibleRegion() {
     return _googleMapsFlutterPlatform.getVisibleRegion(mapId: mapId);
@@ -141,13 +127,11 @@ class MapController {
     return _googleMapsFlutterPlatform.getLatLng(screenCoordinate, mapId: mapId);
   }
 
-
   Future<void> showMarkerInfoWindow(MarkerId markerId) {
     assert(markerId != null);
     return _googleMapsFlutterPlatform.showMarkerInfoWindow(markerId,
         mapId: mapId);
   }
-
 
   Future<void> hideMarkerInfoWindow(MarkerId markerId) {
     assert(markerId != null);
@@ -155,23 +139,19 @@ class MapController {
         mapId: mapId);
   }
 
-
   Future<bool> isMarkerInfoWindowShown(MarkerId markerId) {
     assert(markerId != null);
     return _googleMapsFlutterPlatform.isMarkerInfoWindowShown(markerId,
         mapId: mapId);
   }
 
-
   Future<double> getZoomLevel() {
     return _googleMapsFlutterPlatform.getZoomLevel(mapId: mapId);
   }
 
-
   Future<Uint8List> takeSnapshot() {
     return _googleMapsFlutterPlatform.takeSnapshot(mapId: mapId);
   }
-
 
   void dispose() {
     _googleMapsFlutterPlatform.dispose(mapId: mapId);

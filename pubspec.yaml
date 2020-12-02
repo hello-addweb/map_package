@@ -1,7 +1,7 @@
 name: map_plugin
 description: A Flutter plugin for integrating  Maps in Android applications with Multiple Markers.
-version: 0.0.1
-homepage: https://github.com/hello-addweb/my_camera.git
+version: 0.0.2
+homepage: https://github.com/hello-addweb/map_package.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
